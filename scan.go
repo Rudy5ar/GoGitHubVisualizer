@@ -78,7 +78,7 @@ func addNewSliceElementsToFile(filepath string, newRepos []string) {
 
 func dumpStringsSliceToFile(repos []string, filepath string) {
 	content := strings.Join(repos, "\n")
-	os.WriteFile(filepath, []byte(content), 0755)
+	os.WriteFile(filepath, []byte(content), 0644)
 }
 
 func joinSlices(newRepos []string, existingRepos []string) []string {
@@ -118,7 +118,7 @@ func parseFileLinesToSlice(filepath string) []string {
 }
 
 func openFile(filepath string) *os.File {
-	file, err := os.OpenFile(filepath, os.O_APPEND|os.O_WRONLY, 0755)
+	file, err := os.OpenFile(filepath, os.O_APPEND|os.O_WRONLY|os.O_CREATE, 0644)
 	if err != nil {
 		if os.IsNotExist(err) {
 			file, err = os.Create(filepath)
