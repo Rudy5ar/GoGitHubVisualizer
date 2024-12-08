@@ -65,7 +65,7 @@ func getDotFilePath() string {
 		log.Fatal(err)
 	}
 
-	dotFile := usr.HomeDir + "\\.gogitlocalstats"
+	dotFile := usr.HomeDir + "/.gogitlocalstats"
 
 	return dotFile
 }
@@ -118,7 +118,7 @@ func parseFileLinesToSlice(filepath string) []string {
 }
 
 func openFile(filepath string) *os.File {
-	file, err := os.OpenFile(filepath, os.O_APPEND|os.O_WRONLY|os.O_CREATE, 0644)
+	file, err := os.OpenFile(filepath, os.O_RDWR|os.O_CREATE, 0644)
 	if err != nil {
 		if os.IsNotExist(err) {
 			file, err = os.Create(filepath)
