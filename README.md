@@ -2,17 +2,6 @@
 
 A simple Go application that visualizes commit activity in a grid format similar to GitHub's commit visualizer on profile pages.
 
----
-
-## Table of Contents
-
-1. [Features](#features)  
-2. [Requirements](#requirements)  
-3. [Installation](#installation)  
-4. [Usage](#usage)  
-5. [Screenshots](#screenshots)  
-
----
 
 ## Features
 
